@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Dischi</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        <header>
+            <img src="./assets/img/logo-small.svg" alt="">
+            <label for="genre">Seleziona un genere:</label>
+            <select name="genre" id="genre" v-model="selected">
+                <option value="all">All</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Metal">Metal</option>
+            </select>
+        </header>
+        <div class="container">
+            <div class="card"
+            v-for="(album,index) in albums"
+            v-show="album.genre == selected || selected == 'all'">
+                <div class="cover">
+                    <img :src="albums[index].poster">
+                </div>
+                <div class="info">
+                    <h3>{{album.title}}</h3>
+                    <h5>{{album.author}}</h5>
+                    <h5>{{album.year}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- js -->
+    <script src="./assets/main.js"></script>
+</body>
+</html>
