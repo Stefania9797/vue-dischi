@@ -1,0 +1,12 @@
+.cover {
+  width: 100%;
+  margin: auto;
+}
+.card {
+  width: 200px;
+  background-color: darkblue;
+  margin: 20px;
+}
+img {
+  width: 150px;
+}
