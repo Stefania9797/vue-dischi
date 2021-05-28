@@ -13,16 +13,18 @@
         <header>
             <img src="./assets/img/logo-small.svg" alt="">
         </header>
-        <div class="card"
-        v-for="(album,index) in albums">
-        <div class="cover">
-            <img :src="albums[index].poster">
-        </div>
-        <div class="info">
-            <h3>{{album.title}}</h3>
-            <p>{{album.author}}</p>
-            <span>{{album.year}}</span>
-        </div>
+        <div class="container">
+            <div class="card"
+            v-for="(album,index) in albums">
+                <div class="cover">
+                    <img :src="albums[index].poster">
+                </div>
+                <div class="info">
+                    <h3>{{album.title}}</h3>
+                    <h5>{{album.author}}</h5>
+                    <h5>{{album.year}}</h5>
+                </div>
+            </div>
         </div>
     </div>
     <!-- vue -->
